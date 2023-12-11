@@ -8,7 +8,7 @@ on:
         type: string
 
 permissions:
-  pull-requests: write
+  pull-requests: none
 
 jobs:
   build:
