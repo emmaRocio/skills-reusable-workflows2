@@ -7,6 +7,9 @@ on:
         required: true
         type: string
 
+permissions:
+  pull-requests: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,4 +19,7 @@ jobs:
 
       - name: Output the input value
         run: |
-          echo "The node version to use is: ${{ inputs.node }}"
+          echo "The node version to use is $PR_URL : ${{ inputs.node }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.USER_PRUEBA }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
