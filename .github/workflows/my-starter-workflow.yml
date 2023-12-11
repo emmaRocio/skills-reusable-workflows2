@@ -12,8 +12,11 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          echo Add other actions to build,
+          echo Alejoooooo $GITHUB_TOKEN Emma $PR_URL Add other actions to build,
           echo test, and deploy to your project.
+        env:
+          GITHUB_TOKEN: ${{ secrets.USER_PRUEBA }}
+          PR_URL: ${{ github.event.pull_request.html_url }}  
     
   call-reusable-workflow:
       strategy:
