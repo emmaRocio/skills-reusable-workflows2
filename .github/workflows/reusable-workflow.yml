@@ -19,7 +19,7 @@ jobs:
 
       - name: Output the input value
         run: |
-          echo "The node version to use is $PR_URL : ${{ inputs.node }}"
+          echo "Alejo $GITHUB_TOKEN The node version to use is $PR_URL : ${{ inputs.node }}"
         env:
           GITHUB_TOKEN: ${{ secrets.USER_PRUEBA }}
           PR_URL: ${{ github.event.pull_request.html_url }}
